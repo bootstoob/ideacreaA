@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+  <h3>{{ subcategoria.nombre_subcategoria }} titulo subcategoria</h3>
+  {{ subcategoria.descripcion }} descripcion subcategoria
+  <div *ngFor="let anuncio of subcategoria.anuncios">
+
+        <!--
+        <b><a [routerLink]="['/anuncios', anuncio.id]">{{ anuncio.nombre }}</a></b>
+        &nbsp;&nbsp;{{ anuncio.precio }}€<br>&nbsp;&nbsp;{{ anuncio.descripcion }}
+
+        -->
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ anuncio.nombre }}</h5>
+        <h6>{{ anuncio.precio }}€</h6>
+        <p class="card-text">{{ anuncio.descripcion }}</p>
+        <a [routerLink]="['/anuncios', anuncio.id]" class="btn btn-primary">Ir al anuncio</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

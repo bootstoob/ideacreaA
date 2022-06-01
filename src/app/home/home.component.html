@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<h1>ANUNCIOS GRATIS</h1>
+
+
+<div class="carousel-item">
+  <img src="..." alt="...">
+  <div class="carousel-caption d-none d-md-block">
+    <h5>...</h5>
+    <p>...</p>
+  </div>
+</div>
+
+<div class="jumbotron" *ngFor="let cat of categorias">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
+    content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
+<div *ngFor="let cat of categorias">
+  <b>{{cat.nombre_categoria}}</b>
+
+  <div *ngFor="let subcat of cat.subcategorias">
+    <a [routerLink]="['/subcategorias', subcat.id]">{{subcat.nombre_subcategoria}}</a>
+  </div>
+
+</div>
+
+
+<!--
+<div *ngIf="categorias.length > 0">
+  {{categorias.nombre_categoria}}
+<div *ngFor="let cat of categorias">
+  <div>{{cat.nombre_subcategoria}}</div>
+</div>
+</div>
+-->
+<app-footer></app-footer>

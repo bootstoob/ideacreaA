@@ -1,0 +1,22 @@
+<div class="container">
+    <form [formGroup]="registroForm" (ngSubmit)="veosiexiste();" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required="required">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputNombre" class="form-label">Email</label>
+          <input type="email" formControlName="email" name="email" class="form-control" id="exampleInputNombre" aria-describedby="emailHelp" required="required">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" required="required">
+        </div>
+        <label for="floatingTextarea">Descripción</label>
+        <div class="form-floating">
+            <textarea formControlName="descripcion" class="form-control anchotextarea" name="descripcion" placeholder="Leave a comment here" id="floatingTextarea" minlength="5" required></textarea>
+          </div>
+          <br>
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+      </form>
+    </div>
