@@ -85,7 +85,7 @@ php artisan config:clear
 //---Remove Routes Cache
 php artisan route:clear
 
-
+//utilizado para restablecer la instalación del core
 ng update @angular/core @angular/cli
 npm uninstall @angular-devkit/build-angular
 npm install --save-dev @angular-devkit/build-angular
@@ -123,7 +123,6 @@ php artisan db:seed --class=anuncioSeeder
 php artisan db:seed --class=comentarioSeeder
 php artisan db:seed --class=contactoSeeder
 	php artisan passport:install
-
 
 
 php artisan make:controller categoriasController
@@ -173,7 +172,7 @@ composer require symfony/routing
 php artisan make:middleware Administracion
 	-remove -rf bootstrap/cache/*
 	
-//SALVADA DE BUYATE 2, dropdown de bootstrap
+//SALVADA DE BUYARENGUE, dropdown de bootstrap
 npm install jquery -- save
 npm install bootstrap jquery @popperjs/core
 //angularfix.com/.../bootstrap-dropdown...
