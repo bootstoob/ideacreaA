@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="container container1" style="padding:1%;">
+  <div style="margin-left: 15%;"><h1>Crear anuncio:</h1></div>
+  <form [formGroup]="crearAnuncioForm" (ngSubmit)="crearAnuncio();" method="post">
+    <div style="display:flex; justify-content:space-around;">
+      <div>
+        <div class="mb-3">
+          <input type="hidden" formControlName="usuario_id" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" required="required" readonly placeholder="{{getIdentificacion()}}">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputNombre" class="form-label">categoria_id</label>
+          <input type="email" formControlName="categoria_id" class="form-control" id="exampleInputNombre"
+            aria-describedby="emailHelp" required="required">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">subcategoria_id</label>
+          <input type="" formControlName="subcategoria_id" class="form-control" id=""
+            required="required">
+        </div>
+      </div>
+      <div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">nombre</label>
+          <input type="" formControlName="nombre" class="form-control" id=""
+            required="required">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">precio</label>
+          <input type="" formControlName="precio" class="form-control" id=""
+            required="required">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">forma_contacto</label>
+          <input type="" formControlName="forma_contacto" class="form-control" id=""
+            required="required">
+        </div>
+        <div class="mb-3">
+          <input type="hidden" formControlName="fecha_publicacion" class="form-control" id=""
+            required="required">
+        </div>
+      </div>
+    </div>
+    <label for="floatingTextarea">Descripción(*)</label>
+    <div class="form-floating">
+      <textarea formControlName="descripcion" class="form-control anchotextarea" name="descripcion"
+        placeholder="Leave a comment here" id="floatingTextarea" minlength="5" required></textarea>
+    </div>
+    <br>
+    <div style="display:flex;">
+      <div style="margin:2%;">
+        <input class="form-check-input" type="hidden" id="botonCrearAnun" name="token" value="">
+        <button type="submit" class="btn btn-primary">Crear Anuncio</button>
+      </div>
+      <div style="margin-top:3%;">
+          <input class="form-check-input" type="checkbox" id="mostrarContacto" >
+          <label class="form-check-label" for="autoSizingCheck2">Mostrar mi forma de contacto.</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>

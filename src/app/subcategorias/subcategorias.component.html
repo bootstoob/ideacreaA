@@ -1,36 +1,41 @@
 <app-navbar></app-navbar>
 <div class="container">
 
-  <h3>{{ subcategoria.nombre_subcategoria }} titulo subcategoria</h3>
-  {{ subcategoria.descripcion }} descripcion subcategoria
-  <div *ngFor="let anuncio of subcategoria.anuncios">
+  <h3>Subcategoria: {{subcategoria.nombre_subcategoria}}</h3>
+  <span>Aquí encontrarás... {{subcategoria.descripcion}}</span>
+  <br>
+  <br>
 
-        <!--
-        <b><a [routerLink]="['/anuncios', anuncio.id]">{{ anuncio.nombre }}</a></b>
-        &nbsp;&nbsp;{{ anuncio.precio }}€<br>&nbsp;&nbsp;{{ anuncio.descripcion }}
-
-        -->
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+  <div *ngFor="let anuncio of subcategoria.anuncios" style="margin:1%;">
+    <div class="card" style="">
       <div class="card-body">
-        <h5 class="card-title">{{ anuncio.nombre }}</h5>
-        <h6>{{ anuncio.precio }}€</h6>
-        <p class="card-text">{{ anuncio.descripcion }}</p>
-        <a [routerLink]="['/anuncios', anuncio.id]" class="btn btn-primary">Ir al anuncio</a>
+        <div style="display:flex; justify-content:space-between;">
+          <div>
+            <h5 class="card-title">{{anuncio.nombre}}</h5>
+          </div>
+          <div>
+            <h6>{{anuncio.precio}}€</h6>
+          </div>
+        </div>
+        <hr>
+        <div style="display:flex; justify-content:space-between ; ">
+          <div style="width:80%;">
+            <p class="card-text">{{anuncio.descripcion}}</p>
+            <a [routerLink]="['/anuncios', anuncio.id]" class="btn btn-primary">Ir al anuncio</a>
+          </div>
+          <div style="width:15%; font-size:5em;">
+            <div>
+              <i class="fa fa-file-image-o" aria-hidden="true" style="justify-content:center;"></i>
+            </div>
+            <!--
+              <div> 
+                <img class="card-img-top" src="..." alt="...">
+              </div>
+            -->
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
   </div>
 
 </div>

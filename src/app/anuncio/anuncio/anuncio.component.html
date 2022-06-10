@@ -1,10 +1,60 @@
 <app-navbar></app-navbar>
-<div class="container">
-  <ul>
+<div class="container container1">
 
-    <h3>{{ anuncio.nombre }} Nombre anuncio</h3><br>
-    {{ anuncio.descripcion }} descripcion anuncio
-    <hr>
-  </ul>
+  <h3>Anuncio: {{ anuncio.nombre }}</h3> <br>
+  <h3>Precio: {{ anuncio.precio }}€</h3>
+    
+    <p>{{ anuncio.fecha_publicacion }}</p>
+  <br>
+  <span>{{ anuncio.descripcion }} descripcion anuncio</span>
+
+  <hr>
+
+  <div style="display: flex;">
+    <!--Google map-->
+    <div id="map-container-google-3" class="z-depth-1-half map-container-3">
+      <iframe class="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50246.135041220805!2d-0.9834014461556695!3d38.0847377040401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6398e10c4ab491%3A0xf2c96c8379250951!2sOrihuela%2C%20Alicante!5e0!3m2!1ses!2ses!4v1623775042953!5m2!1ses!2ses"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="element" style="margin: 2%; width: 90%;">
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-sm-12 my-1">
+            <label class="sr-only" for="inlineFormInputName">Nombre</label>
+            <input type="text" class="form-control" id="inlineFormInputName" placeholder="Título del mensaje">
+          </div>
+          <div class="col-sm-12 my-1">
+            <label class="sr-only" for="inlineFormInputGroupUsername">Usuario</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Contacto(*)">
+            </div>
+          </div>
+          <div class="col-auto my-1">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+              <label class="form-check-label" for="autoSizingCheck2">Enviar un aviso por e-mail</label>
+            </div>
+          </div>
+          <button class="btn btn-primary boton-enviar" type="submit">Enviar mensaje</button>
+          <div class="form-group col-sm-12">
+            <label for="validationTooltip05">Mensaje</label>
+            <input type="text" class="form-control form-control-textarea" id="validationTooltip05" style="height:200px;" required>
+            <div class="invalid-tooltip">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <br>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
 </div>
 <app-footer></app-footer>

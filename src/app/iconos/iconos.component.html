@@ -1,0 +1,12 @@
+<div>
+    <!--
+    <h6 class="numeroCat" [src]="dataEntrante.numeroCat"></h6>
+    <img class="icono" [src]="dataEntrante.icono" alt="">
+    -->
+    <div class="child">
+        <h4>{{subcatContendiente}}</h4>
+        <p>Añade aquí las posibles nuevas subcategorias que consideres interesantes:</p>
+        <input type="text" id="beverage-input" #nuevaSubcatContendiente>
+        <button (click)="addSubcatContendiente(nuevaSubcatContendiente.value)">Añadir</button>
+    </div>
+</div>

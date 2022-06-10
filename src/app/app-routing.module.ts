@@ -1,3 +1,4 @@
+//import { CrearAnuncioComponent } from './crearanuncio/crearanuncio.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -11,14 +12,11 @@ import { RegistroComponent } from './registro/registro.component';
 import { AdministracionComponent } from './administracion/administracion.component';
 import { SubcategoriasComponent } from './subcategorias/subcategorias.component';
 import { AnuncioComponent } from './anuncio/anuncio/anuncio.component';
-//import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 //import { AnunciosComponent } from './anuncios/anuncios.component';
+import {  CrearanuncioComponent} from './crearanuncio/crearanuncio.component'
 
 const routes: Routes = [  
-
-  //TODO: necesarios???
-  //{ path: 'navbar', component:NavbarComponent },
-  //{ path: 'footer', component:FooterComponent },
 
   { path: 'home', component:HomeComponent },
   { path: 'acceso', component: AccesoComponent },
@@ -26,12 +24,10 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'administracion', component: AdministracionComponent },
   { path: 'subcategorias/:id', component: SubcategoriasComponent},
-  //{ path: 'registro', component: RegistroComponent },
-  //{ path: 'anuncio', component: BusquedaComponent },
-  //{ path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  //{ path: 'usuarios', component: UsuariosComponent },
+  { path: 'usuario/:id', component: UsuariosComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'anuncios/:anuncio_id', component: AnuncioComponent}
+  { path: 'anuncios/:anuncio_id', component: AnuncioComponent},
+  { path: 'crearanuncio', component: CrearanuncioComponent },
 ];
 
 @NgModule({

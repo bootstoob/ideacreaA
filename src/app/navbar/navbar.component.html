@@ -1,17 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+  <div class="container-fluid" style="display:flex; justify-content:space-between;">
+
+    <img class="logoempresa" src="assets\logos\logo-princial.png" style="width:15%;">
+
     <div>
-      <a class="navbar-brand" href="#">Anuncios</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/crearanuncio']">Crear Anuncios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contacto</a>
@@ -20,42 +25,84 @@
       </div>
     </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        Mi cuenta
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a ngbDropdownItem href="#">Inicio de Sesión</a></li>
-        <li><a ngbDropdownItem routerLink="" (click)="salir()">LogOut</a></li>
-        <li><a ngbDropdownItem href="#">Perfil</a></li>
-      </ul>
+    <div style="margin-right:10%;">
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
     </div>
+    <span *ngIf="token === null">
+      <div style="display: flex;">
+        <button class="btn btn-secondary" type="button" id="dropdownMenuButton2">
+          <div style="display:flex;">
+            <div>
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span><a style="color: white; text-decoration: none;" [routerLink]="['/acceso']"> Acceso</a> </span>
+            </div>
+          </div>
+        </button>
+        <button class="btn btn-secondary" type="button" id="dropdownMenuButton2" style="margin-left:5%;">
+          <div style="display:flex;">
+            <div>
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span><a style="color: white; text-decoration: none;" [routerLink]="['/registro']"> Registro</a> </span>
+            </div>
+          </div>
+        </button>
+      </div>
+    </span>
+
+    <span *ngIf="token !== null">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Mi cuenta
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"
+          style="font-weight:bold; padding:5px; margin-left:-100%;">
+          <li>
+            <a ngbDropdownItem> Hola, usuario: {{nombre}}</a>
+          </li>
+          <hr>
+          <li style="margin-left:9px; margin-bottom:9px;">
+            <div style="display:flex;">
+              <div style="width:10%;">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </div>
+              <div>
+                <a ngbDropdownItem  [routerLink]="['/usuario/',id]"> Perfil</a>
+              </div>
+            </div>
+          </li>
+          <li style="margin-left:9px; margin-bottom:9px;">
+            <div style="display:flex;">
+              <div style="width:10%;">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </div>
+              <div>
+                <a ngbDropdownItem [routerLink]="['/crearanuncio']"> Crear Anuncios</a>
+              </div>
+            </div>
+          </li>
+          <li style="margin-left:9px; margin-bottom:9px;">
+            <div style="display:flex;">
+              <div style="width:10%;">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </div>
+              <div>
+                <a ngbDropdownItem routerLink="" (click)="salir()"> Salir</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </span>
 
   </div>
 
 </nav>
-<div class="container">
-  <div class="row">
-    <form method="get">
-      <div class="col-md-6 m-auto mt-4">
-        <!--
-        <div class="form-group" [formGroup]="buscarForm">
-          <input class="form-control form-control-lg" formControlName="buscar" type="text" placeholder="Buscar"
-            name="buscar" id="buscar" aria-label="Search" (input)="getanuncios($event)">
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" *ngFor="let result of data" (click)="busqueda(result)">
-
-            <h5>{{result.titulo}}</h5>
-            {{result.descripcion}}
-          </li>
-        </ul>
-
-        -->
-
-      </div>
-    </form>
-  </div>
-</div>
-

@@ -1,4 +1,8 @@
-<div class="container">
+<app-navbar></app-navbar>
+<div class="container container1">
+  <div style="margin-left: 15%;">
+    <h1>Accede a tu cuenta:</h1>
+  </div>
   <form [formGroup]="loginForm" (ngSubmit)="logIn()" method="post">
     <fieldset class="field_set">
       <div class="mb-3">
@@ -21,7 +25,21 @@
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
       </div> -->
-      <button type="submit" class="btn btn-primary">Entrar</button>
+
     </fieldset>
+    <!--
+      <div *ngIf="textosBotones.length>3">
+        <div *ngFor="let boton of textosBotones >3">
+          <app-boton [text]="boton"></app-boton>
+          </app-boton>
+        </div>
+        <app-boton>text="soy NO un boton"</app-boton>
+      </div>
+    -->
+
+ 
+    <button type="submit"  class="btn btn-primary">Entrar</button>
   </form>
 </div>
+
+<app-footer></app-footer>

@@ -14,6 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AdministracionComponent } from './administracion/administracion.component';
 import { AdministracionMenuComponent } from './administracion-menu/administracion-menu.component';
 import { AnuncioComponent } from './anuncio/anuncio/anuncio.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { IconosComponent } from './iconos/iconos.component';
+import { CrearanuncioComponent } from './crearanuncio/crearanuncio.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { AnuncioComponent } from './anuncio/anuncio/anuncio.component';
     AdministracionComponent,
     AdministracionMenuComponent,
     SubcategoriasComponent,
-    AnuncioComponent
+    AnuncioComponent,
+    UsuariosComponent,
+    IconosComponent,
+    CrearanuncioComponent
   ],
   imports: [
     BrowserModule,

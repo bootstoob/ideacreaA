@@ -7,9 +7,8 @@ import { Router } from '@angular/router';
 export class SalirService {
 
   constructor(private router:Router) { }
-  //TODO
   salir(){
-    localStorage.removeItem('email');
+    localStorage.removeItem('token');
     this.router.navigate(['/']);  
   }
 }

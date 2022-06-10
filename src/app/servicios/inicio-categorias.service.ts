@@ -23,7 +23,6 @@ export class InicioCategoriasService {
 
   constructor(private httpClient: HttpClient) { }
   getTodasCategorias() {
-    //TODO: 
     return this.httpClient.get<any>('http://localhost:8000/api/categoriassub/');
 
   }

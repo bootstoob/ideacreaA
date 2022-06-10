@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div class="container container1">
+  <div style="display:flex; justify-content:space-between;">
+    <div style="margin:2%; width:60%;">
+      <h3>Perfil de: {{usuario.nombre}}</h3>
+    </div>
+    <div style="margin-right:2%;">
+      <div style="width:80%;">
+        <button type="button" class="btn btn-info" style="margin-top:40%;">
+          <i class="fa fa-cogs" aria-hidden="true" style="font-size:1em;"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <br>
+  <h6>Tu descripción de usuario:</h6>
+  <br>
+  <p>{{usuario.descripcion}}</p>
+  <hr>
+  <h6>Tus anuncios:</h6>
+
+  <div class="jumbotron" *ngIf="usuario">
+    <div *ngFor="let anun of usuario.anuncios" style="margin:1%;">
+      <div class="card" style="">
+        <div class="card-body">
+          <div style="display:flex; justify-content:space-between;">
+            <div>
+              <h5 class="card-title">{{anun.nombre}}</h5>
+            </div>
+            <div>
+              <h6>{{anun.precio}}€</h6>
+            </div>
+          </div>
+          <hr>
+          <div style="display:flex; justify-content:space-between ; ">
+            <div style="width:80%;">
+              <p class="card-text">{{anun.descripcion}}</p>
+              <a [routerLink]="['/anuncios', anun.id]" class="btn btn-primary">Ir al anuncio</a>
+            </div>
+            <div style="width:15%; font-size:5em;">
+              <div>
+                <i class="fa fa-file-image-o" aria-hidden="true" style="justify-content:center;"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>
